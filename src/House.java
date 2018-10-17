@@ -23,6 +23,7 @@ public class House {
     }
 
     public void setAddress(String address) {
+
         this.address = address;
     }
 
@@ -31,6 +32,11 @@ public class House {
     }
 
     public void setPrice(double price) {
+        if(price < 0)
+        {
+            this.setPrice(0.0);
+        }
+        else
         this.price = price;
     }
 
@@ -51,7 +57,7 @@ public class House {
         this.setPerson(name);
 
     }
-    public static  void populateHouses()
+    /*public static  void populateHouses()
     {
         int amontForSale = Integer.parseInt(JOptionPane.showInputDialog("How many houses would you like to sell: "));
 
@@ -84,9 +90,9 @@ public class House {
             text += h.toString();
         }
 
-    }
+    }*/
 
-    @Override
+    //@Override
     public String toString() {
         return "Address: " + address + "\nType: "+ type + "\nPrice: "+ price + "\n"+Person+"\n";
     }
